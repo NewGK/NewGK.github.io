@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://NewGK.github.io">
   <title>java基础知识点 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 面向对象和面向过程的区别 面向过程 ：面向过程性能比面向对象高。 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux&#x2F;Unix等一般采用面向过程开发。但是，面向过程没有面向对象易维护、易复用、易扩展。  面向对象 ：面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统">
+  <meta name="description" content="Java基础知识点学习（转载于Snailclimb&#x2F;JavaGuide）原文地址：https:&#x2F;&#x2F;github.com&#x2F;Snailclimb&#x2F;JavaGuide 1. 面向对象和面向过程的区别 面向过程 ：面向过程性能比面向对象高。 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux&#x2F;Unix等一般采用面向过程开发。但是，面向过">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java基础知识点">
 <meta property="og:url" content="https:&#x2F;&#x2F;newgk.github.io&#x2F;2019&#x2F;11&#x2F;03&#x2F;java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 面向对象和面向过程的区别 面向过程 ：面向过程性能比面向对象高。 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux&#x2F;Unix等一般采用面向过程开发。但是，面向过程没有面向对象易维护、易复用、易扩展。  面向对象 ：面向对象易维护、易复用、易扩展。 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统">
+<meta property="og:description" content="Java基础知识点学习（转载于Snailclimb&#x2F;JavaGuide）原文地址：https:&#x2F;&#x2F;github.com&#x2F;Snailclimb&#x2F;JavaGuide 1. 面向对象和面向过程的区别 面向过程 ：面向过程性能比面向对象高。 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux&#x2F;Unix等一般采用面向过程开发。但是，面向过">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;my-blog-to-use.oss-cn-beijing.aliyuncs.com&#x2F;Java%20%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;my-blog-to-use.oss-cn-beijing.aliyuncs.com&#x2F;18-9-15&#x2F;86735519.jpg">
@@ -23,7 +23,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;my-blog-to-use.oss-cn-beijing.aliyuncs.com&#x2F;2019-2&#x2F;Exception.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;my-blog-to-use.oss-cn-beijing.aliyuncs.com&#x2F;2019-6&#x2F;IO-%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;my-blog-to-use.oss-cn-beijing.aliyuncs.com&#x2F;2019-6&#x2F;IO-%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E5%88%86%E7%B1%BB.png">
-<meta property="og:updated_time" content="2019-11-03T03:08:58.207Z">
+<meta property="og:updated_time" content="2019-11-03T03:28:38.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;my-blog-to-use.oss-cn-beijing.aliyuncs.com&#x2F;Java%20%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.png">
   
@@ -181,7 +181,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-面向对象和面向过程的区别"><a href="#1-面向对象和面向过程的区别" class="headerlink" title="1. 面向对象和面向过程的区别"></a>1. 面向对象和面向过程的区别</h2><ul>
+        <h1 id="Java基础知识点学习（转载于Snailclimb-JavaGuide）"><a href="#Java基础知识点学习（转载于Snailclimb-JavaGuide）" class="headerlink" title="Java基础知识点学习（转载于Snailclimb/JavaGuide）"></a>Java基础知识点学习（转载于Snailclimb/JavaGuide）</h1><p>原文地址：<a href="https://github.com/Snailclimb/JavaGuide" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide</a></p>
+<h2 id="1-面向对象和面向过程的区别"><a href="#1-面向对象和面向过程的区别" class="headerlink" title="1. 面向对象和面向过程的区别"></a>1. 面向对象和面向过程的区别</h2><ul>
 <li><strong>面向过程</strong> ：<strong>面向过程性能比面向对象高。</strong> 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux/Unix等一般采用面向过程开发。但是，<strong>面向过程没有面向对象易维护、易复用、易扩展。</strong> </li>
 <li><strong>面向对象</strong> ：<strong>面向对象易维护、易复用、易扩展。</strong> 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护。但是，<strong>面向对象性能比面向过程低</strong>。</li>
 </ul>
