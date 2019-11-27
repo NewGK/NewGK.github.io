@@ -153,6 +153,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-内部类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/NewGK.github.io/2019/11/27/%E5%86%85%E9%83%A8%E7%B1%BB/">内部类</a>
+    </h1>
+  
+
+        
+        <a href="/NewGK.github.io/2019/11/27/%E5%86%85%E9%83%A8%E7%B1%BB/" class="archive-article-date">
+  	<time datetime="2019-11-27T05:36:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="内部类及枚举类学习"><a href="#内部类及枚举类学习" class="headerlink" title="内部类及枚举类学习"></a>内部类及枚举类学习</h1><p>​                                                                                                                            <strong>作者：NewGK</strong></p>
+<h2 id="内部类的分类："><a href="#内部类的分类：" class="headerlink" title="内部类的分类："></a>内部类的分类：</h2><ul>
+<li><p>成员内部类</p>
+</li>
+<li><p>静态成员内部类</p>
+</li>
+<li><p>局部内部类</p>
+</li>
+<li><p>匿名内部类</p>
+<h5 id="成员内部类："><a href="#成员内部类：" class="headerlink" title="成员内部类："></a>成员内部类：</h5><p>顾名思义，平时我们定义类中成员是普通的变量，现在我们可以定义成一个类</p>
+<h5 id="静态成员内部类："><a href="#静态成员内部类：" class="headerlink" title="静态成员内部类："></a>静态成员内部类：</h5><p>与成员内部类不同的是，此类被 static 修饰，由于此原因，静态成员内部类可以直接由内部类类名访问</p>
+<h5 id="局部内部类："><a href="#局部内部类：" class="headerlink" title="局部内部类："></a>局部内部类：</h5><p>局部内部类可以定义在外部类的各个作用域中，需要注意：<strong>局部内部类不可以被访问修饰符修饰</strong></p>
+<h5 id="匿名内部类："><a href="#匿名内部类：" class="headerlink" title="匿名内部类："></a>匿名内部类：</h5><p>对接口的具体实现只实例化一次，或者继承父类的子类只需要实例化一次，可以使用匿名内部类，比如说</p>
+<p>线程的创建：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Thread()&#123;&#125;).start();</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h5 id="内部类访问外部类："><a href="#内部类访问外部类：" class="headerlink" title="内部类访问外部类："></a>内部类访问外部类：</h5><p>  外部类.this.XXX</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Outer.<span class="keyword">this</span>.XXX;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="外部类访问内部类："><a href="#外部类访问内部类：" class="headerlink" title="外部类访问内部类："></a>外部类访问内部类：</h5><ul>
+<li><p>外部类访问内部类时，需要先实例化内部类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Inner().XXX;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>当主类需要访问对象的内部类对象时，需要先实例化外部类再实例化内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Outer.Inner inner = <span class="keyword">new</span> Outer().new Inner();</span><br><span class="line"><span class="comment">//静态成员内部类的访问</span></span><br><span class="line">Outer.Inner2 inner2 = <span class="keyword">new</span> Outer.Inner2();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h5 id="使用内部类的好处："><a href="#使用内部类的好处：" class="headerlink" title="使用内部类的好处："></a>使用内部类的好处：</h5><p>好处有两点：</p>
+<ul>
+<li>内部类可以成为<strong>多继承</strong>的一种实现方式；</li>
+<li>可以将有一定逻辑关系的类组织到一起，又可以对外界隐藏。</li>
+</ul>
+<h2 id="枚举类："><a href="#枚举类：" class="headerlink" title="枚举类："></a>枚举类：</h2><p>枚举类是 JDK 1.5 的新特性，用关键字 “enum” 来声明，功能虽小，非常实用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> ColorEnum &#123;</span><br><span class="line">    RED,</span><br><span class="line">    BLUE,</span><br><span class="line">    YELLOW,</span><br><span class="line">    GREEN</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EnumTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ColorEnum color = ColorEnum.GREEN;</span><br><span class="line">        <span class="keyword">switch</span>(color) &#123;</span><br><span class="line">                <span class="keyword">case</span> RED:</span><br><span class="line">                System.out.println(<span class="string">"Red"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> BLUE:</span><br><span class="line">                System.out.println(<span class="string">"Blue"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> YELLOW:</span><br><span class="line">                System.out.println(<span class="string">"Yellow"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> GREEN:</span><br><span class="line">                System.out.println(<span class="string">"Green"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="枚举类命名规范："><a href="#枚举类命名规范：" class="headerlink" title="枚举类命名规范："></a>枚举类命名规范：</h5><ul>
+<li><p>类名以 “Enum” 为后缀</p>
+</li>
+<li><p>成员一律大写，中间用下划线隔开</p>
+</li>
+</ul>
+<img alt="enter image description here" src="https://images.gitbook.cn/64e7ff70-c7b3-11e9-a87f-3bdeb236b9c4">
+
+<h5 id="扩展枚举类："><a href="#扩展枚举类：" class="headerlink" title="扩展枚举类："></a>扩展枚举类：</h5><p>可以再枚举类中写一些方法扩展枚举类的使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> ColorsEnum &#123;</span><br><span class="line">    RED(<span class="string">"红色"</span>, <span class="number">1</span>),</span><br><span class="line">    BLUE(<span class="string">"蓝色"</span>, <span class="number">2</span>),</span><br><span class="line">    YELLOW(<span class="string">"黄色"</span>, <span class="number">3</span>),</span><br><span class="line">    GREEN(<span class="string">"绿色"</span>, <span class="number">4</span>);</span><br><span class="line">    ColorsEnum(String name, <span class="keyword">int</span> index) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.index = index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> index;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIndex</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.index = index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EnumTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(ColorsEnum.RED.getName());</span><br><span class="line">        System.out.println(ColorsEnum.RED.getIndex());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="枚举类应用场景："><a href="#枚举类应用场景：" class="headerlink" title="枚举类应用场景："></a>枚举类应用场景：</h5><ul>
+<li><p>可以作为高级常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Color &#123;</span><br><span class="line">    RED(<span class="string">"#FF0000"</span>, <span class="string">"255,0,0"</span>),</span><br><span class="line">    GREEN(<span class="string">"#00FFFF"</span>, <span class="string">"0,255,255"</span>),</span><br><span class="line">    YELLOW(<span class="string">"#FFFF00"</span>, <span class="string">"255,255,0"</span>);</span><br><span class="line">    String hex, rgb;</span><br><span class="line">    Color(String hex, String rgb) &#123;</span><br><span class="line"> 		<span class="keyword">this</span>.hex = hex;</span><br><span class="line"> 		<span class="keyword">this</span>.rgb = rgb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>可以方便switch的判断</li>
+</ul>
+<h5 id="枚举类在-JVM-中是如何实现的？"><a href="#枚举类在-JVM-中是如何实现的？" class="headerlink" title="枚举类在 JVM 中是如何实现的？"></a>枚举类在 JVM 中是如何实现的？</h5><ul>
+<li><p>通过 “static final” 实现的，因此调用时才可以通过类名<strong>.</strong>成员来实现。</p>
+</li>
+<li><p>也正因如此，枚举类<strong>不可继承</strong>、<strong>线程安全</strong>！！</p>
+</li>
+</ul>
+<h5 id="枚举是否可以被序列化？"><a href="#枚举是否可以被序列化？" class="headerlink" title="枚举是否可以被序列化？"></a>枚举是否可以被序列化？</h5><p>可以，枚举的序列化和普通类的序列化不同，枚举序列化的时候，只是将枚举对象的 name 属性输出到结果中，反序列化的时候则是通过 java.lang.Enum 的 valueOf 方法根据名字查找枚举对象</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/NewGK.github.io/2019/11/27/%E5%86%85%E9%83%A8%E7%B1%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-me" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
